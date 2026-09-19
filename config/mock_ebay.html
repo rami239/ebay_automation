@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><title>eBay Mock Store</title>
+<style>body{font-family:Arial;margin:20px;background:#f7f7f7}.ebay-header,#loginPanel{background:white;padding:15px;border:1px solid #ddd;border-radius:8px;margin-bottom:15px}.logo{font-size:24px;font-weight:bold;display:inline-block;margin-right:20px}.search-bar{width:45%;padding:8px}.results-container{list-style:none;padding:0;max-width:800px;margin:20px auto}.s-item{background:white;border:1px solid #ddd;border-radius:8px;margin-bottom:15px;padding:15px}.s-item__link{color:#06c;text-decoration:none;font-size:18px;font-weight:bold;display:block;margin-bottom:8px}.s-item__price{font-size:20px;font-weight:bold}button{padding:8px 12px;cursor:pointer}.hidden{display:none}</style></head>
+<body>
+<div class="ebay-header"><div class="logo">ebay</div><input id="searchInput" class="search-bar" value="shoes"><button id="searchBtn">Search</button><button id="openCartBtn">Cart (<span id="cartCount">0</span>)</button></div>
+<div id="loginPanel"><strong>Mock Login</strong><br><input id="username" placeholder="Username"><input id="password" type="password" placeholder="Password"><button id="loginBtn">Login</button> <span id="loginStatus"></span></div>
+<div>Page: <strong id="pageNumber">1</strong> <button id="nextBtn">Next</button></div>
+<ul class="srp-results results-container" id="results"></ul><div id="noResults" class="hidden">No products found.</div>
+<script>
+const products=[
+{id:'nike-air-max',name:'Nike Air Max Running Shoes Black',price:150},
+{id:'adidas-superstar',name:'Adidas Superstar Sneakers White',price:190},
+{id:'puma-smash',name:'Puma Smash Casual Shoes',price:85},
+{id:'new-balance',name:'New Balance Fresh Foam Shoes',price:210},
+{id:'reebok-classic',name:'Reebok Classic Leather Shoes',price:125},
+{id:'expensive-shoe',name:'Premium Limited Edition Shoes',price:450}];
+const pageSize=3;let currentPage=1;let filteredProducts=[...products];
+function cart(){return JSON.parse(localStorage.getItem('cart')||'[]')}
+function setCart(c){localStorage.setItem('cart',JSON.stringify(c));document.getElementById('cartCount').innerText=c.length}
+function render(){const r=document.getElementById('results');r.innerHTML='';const start=(currentPage-1)*pageSize;const pageItems=filteredProducts.slice(start,start+pageSize);pageItems.forEach(p=>{const li=document.createElement('li');li.className='s-item';li.innerHTML=`<a class="s-item__link" href="product_${p.id}.html">${p.name}</a><span class="s-item__price">$${p.price.toFixed(2)}</span>`;r.appendChild(li)});document.getElementById('noResults').classList.toggle('hidden',pageItems.length!==0);document.getElementById('pageNumber').innerText=currentPage;document.getElementById('nextBtn').disabled=currentPage*pageSize>=filteredProducts.length}
+function search(){const q=document.getElementById('searchInput').value.trim().toLowerCase();filteredProducts=products.filter(p=>p.name.toLowerCase().includes(q));currentPage=1;render()}
+document.getElementById('searchBtn').onclick=search;document.getElementById('nextBtn').onclick=()=>{currentPage++;render()};document.getElementById('loginBtn').onclick=()=>{const u=document.getElementById('username').value.trim(),p=document.getElementById('password').value.trim();document.getElementById('loginStatus').innerText=u&&p?'Logged in':'Login failed';if(u&&p)localStorage.setItem('loggedIn','true')};document.getElementById('openCartBtn').onclick=()=>location.href='cart.html';setCart(cart());render();
+</script></body></html>

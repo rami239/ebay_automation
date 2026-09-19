@@ -1,0 +1,31 @@
+17:41:42 | INFO | pages.login_page | Authenticating user: test_user
+17:41:42 | INFO | pages.login_page | Login successful for user: test_user
+17:41:42 | INFO | pages.search_page | Scanning results page; cards detected: 3
+17:41:42 | INFO | pages.search_page | MATCH: Nike Air Max Running Shoes Black | $150.00 | http://127.0.0.1:50854/product_nike-air-max.html
+17:41:42 | INFO | pages.search_page | MATCH: Puma Smash Casual Shoes | $85.00 | http://127.0.0.1:50854/product_puma-smash.html
+17:41:42 | INFO | pages.search_page | MATCH: New Balance Fresh Foam Shoes | $210.00 | http://127.0.0.1:50854/product_new-balance.html
+17:41:42 | INFO | pages.search_page | Scanning results page; cards detected: 2
+17:41:42 | INFO | pages.search_page | MATCH: Reebok Classic Leather Shoes | $125.00 | http://127.0.0.1:50854/product_reebok-classic.html
+17:41:42 | INFO | pages.search_page | Search complete; valid URLs collected: 4
+17:41:42 | INFO | tests.test_ebay_e2e | Matching products found: 4
+17:41:42 | INFO | tests.test_ebay_e2e | Product #1: Nike Air Max Running Shoes Black | $150.00
+17:41:42 | INFO | tests.test_ebay_e2e | Product #2: Puma Smash Casual Shoes | $85.00
+17:41:42 | INFO | tests.test_ebay_e2e | Product #3: New Balance Fresh Foam Shoes | $210.00
+17:41:42 | INFO | tests.test_ebay_e2e | Product #4: Reebok Classic Leather Shoes | $125.00
+17:41:42 | INFO | pages.product_page | Adding product #1: http://127.0.0.1:50854/product_nike-air-max.html
+17:41:42 | INFO | pages.product_page | Selected Size: 43
+17:41:42 | INFO | pages.product_page | Selected Color: Black
+17:41:42 | INFO | pages.product_page | Product added successfully: Nike Air Max Running Shoes Black | cart count=1
+17:41:42 | INFO | pages.product_page | Adding product #2: http://127.0.0.1:50854/product_puma-smash.html
+17:41:42 | INFO | pages.product_page | Selected Size: 41
+17:41:42 | INFO | pages.product_page | Selected Color: White
+17:41:42 | INFO | pages.product_page | Product added successfully: Puma Smash Casual Shoes | cart count=2
+17:41:42 | INFO | pages.product_page | Adding product #3: http://127.0.0.1:50854/product_new-balance.html
+17:41:42 | INFO | pages.product_page | Selected Size: 41
+17:41:42 | INFO | pages.product_page | Selected Color: Black
+17:41:42 | INFO | pages.product_page | Product added successfully: New Balance Fresh Foam Shoes | cart count=3
+17:41:42 | INFO | pages.product_page | Adding product #4: http://127.0.0.1:50854/product_reebok-classic.html
+17:41:43 | INFO | pages.product_page | Selected Size: 40
+17:41:43 | INFO | pages.product_page | Selected Color: Black
+17:41:43 | INFO | pages.product_page | Product added successfully: Reebok Classic Leather Shoes | cart count=4
+17:41:43 | INFO | pages.cart_page | Cart verification passed: items=4, total=$570.00, max=$880.00

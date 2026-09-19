@@ -1,0 +1,7 @@
+{
+  "username": "test_user",
+  "password": "test_password",
+  "search_query": "shoes",
+  "max_price": 220,
+  "item_limit": 5
+}
