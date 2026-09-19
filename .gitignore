@@ -2,8 +2,11 @@
 __pycache__/
 *.py[cod]
 .pytest_cache/
-artifacts/*.html
-artifacts/screenshots/*.png
+
 .idea/
 .vscode/
 .DS_Store
+
+allure-results/
+
+artifacts/pytest_report.html
